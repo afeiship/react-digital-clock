@@ -1,5 +1,6 @@
 $react-digital-clock-options:(
-  base-size: 10px
+  font-size: 10px,
+  digital-font-size: 8px
 )!default;
 
 
@@ -7,342 +8,111 @@ $react-digital-clock-options:(
 	The clocks
 --------------------------*/
 
+@import 'node_modules/react-digital-numeric/dist/style.scss';
 
-.react-digital-clock{
-  $base-size: map-get($map: $react-digital-clock-options, $key: base-size);
-  font-size: $base-size;
+.react-digital-clock {
+  $font-size: map-get($map: $react-digital-clock-options, $key: font-size);
+  $digital-font-size: map-get($map: $react-digital-clock-options, $key: digital-font-size);
+  font-size: $font-size;
   box-sizing: content-box;
-	width:37em;
-	padding:4em;
-	position:relative;
-}
-
-.react-digital-clock:after{
-	content:'';
-	position:absolute;
-	width:40em;
-	height:2em;
-	border-radius:100%;
-	left:50%;
-	margin-left:-20em;
-	bottom:2px;
-	z-index:-1;
-}
-
-
-.react-digital-clock .display{
-  box-sizing: content-box;
-	text-align:center;
-	padding: 4em 2em 2em;
-	border-radius:0.6em;
-	position:relative;
-	height: 5.4em;
-}
-
-
-/*-------------------------
-	Light color theme
---------------------------*/
-
-
-.react-digital-clock.light{
-	background-color:#f3f3f3;
-	color:#272e38;
-}
-
-.react-digital-clock.light:after{
-	box-shadow:0 0.4em 1em rgba(0,0,0,0.15);
-}
-
-.react-digital-clock.light .digits div span{
-	background-color:#272e38;
-	border-color:#272e38;
-}
-
-.react-digital-clock.light .digits div.dots:before,
-.react-digital-clock.light .digits div.dots:after{
-	background-color:#272e38;
-}
-
-.react-digital-clock.light .alarm{
-	background:url('./assets/alarm_light.jpg');
-}
-
-.react-digital-clock.light .display{
-	background-color:#dddddd;
-	box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #fafafa;
-}
-
-
-/*-------------------------
-	Dark color theme
---------------------------*/
-
-
-.react-digital-clock.dark{
-	background-color:#272e38;
-	color:#cacaca;
-}
-
-.react-digital-clock.dark:after{
-	box-shadow:0 0.4em 1em rgba(0,0,0,0.3);
-}
-
-.react-digital-clock.dark .digits div span{
-	background-color:#cacaca;
-	border-color:#cacaca;
-}
-
-.react-digital-clock.dark .alarm{
-	background:url('./assets/alarm_dark.jpg');
-}
-
-.react-digital-clock.dark .display{
-	background-color:#0f1620;
-	box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #2d3642;
-}
-
-.react-digital-clock.dark .digits div.dots:before,
-.react-digital-clock.dark .digits div.dots:after{
-	background-color:#cacaca;
-}
-
-
-/*-------------------------
-	The Digits
---------------------------*/
-
-
-.react-digital-clock .digits div{
-	text-align:left;
-	position:relative;
-	width: 2.8em;
-	height:5.0em;
-	display:inline-block;
-	margin:0 0.4em;
-}
-
-.react-digital-clock .digits div span{
-	opacity:0;
-	position:absolute;
-
-	-webkit-transition:0.25s;
-	-moz-transition:0.25s;
-	transition:0.25s;
-}
-
-.react-digital-clock .digits div span:before,
-.react-digital-clock .digits div span:after{
-	content:'';
-	position:absolute;
-	width:0;
-	height:0;
-	border:0.5em solid transparent;
-}
-
-.react-digital-clock .digits .d1{			height:0.5em;width:1.6em;top:0;left:0.6em;}
-.react-digital-clock .digits .d1:before{	border-width:0 0.5em 0.5em 0;border-right-color:inherit;left:-0.5em;}
-.react-digital-clock .digits .d1:after{	border-width:0 0 0.5em 0.5em;border-left-color:inherit;right:-0.5em;}
-
-.react-digital-clock .digits .d2{			height:0.5em;width:1.6em;top:2.4em;left:0.6em;}
-.react-digital-clock .digits .d2:before{	border-width:3px .4em 2px;border-right-color:inherit;left:-8px;}
-.react-digital-clock .digits .d2:after{	border-width:3px .4em 2px;border-left-color:inherit;right:-8px;}
-
-.react-digital-clock .digits .d3{			height:0.5em;width:1.6em;top:48px;left:0.6em;}
-.react-digital-clock .digits .d3:before{	border-width:0.5em 0.5em 0 0;border-right-color:inherit;left:-0.5em;}
-.react-digital-clock .digits .d3:after{	border-width:0.5em 0 0 0.5em;border-left-color:inherit;right:-0.5em;}
-
-.react-digital-clock .digits .d4{			width:0.5em;height:1.4em;top:.7em;left:0;}
-.react-digital-clock .digits .d4:before{	border-width:0 0.5em 0.5em 0;border-bottom-color:inherit;top:-0.5em;}
-.react-digital-clock .digits .d4:after{	border-width:0 0 0.5em 0.5em;border-left-color:inherit;bottom:-0.5em;}
-
-.react-digital-clock .digits .d5{			width:0.5em;height:1.4em;top:.7em;right:0;}
-.react-digital-clock .digits .d5:before{	border-width:0 0 0.5em 0.5em;border-bottom-color:inherit;top:-0.5em;}
-.react-digital-clock .digits .d5:after{	border-width:0.5em 0 0 0.5em;border-top-color:inherit;bottom:-0.5em;}
-
-.react-digital-clock .digits .d6{			width:0.5em;height:1.4em;top:32px;left:0;}
-.react-digital-clock .digits .d6:before{	border-width:0 0.5em 0.5em 0;border-bottom-color:inherit;top:-0.5em;}
-.react-digital-clock .digits .d6:after{	border-width:0 0 0.5em 0.5em;border-left-color:inherit;bottom:-0.5em;}
-
-.react-digital-clock .digits .d7{			width:0.5em;height:1.4em;top:32px;right:0;}
-.react-digital-clock .digits .d7:before{	border-width:0 0 0.5em 0.5em;border-bottom-color:inherit;top:-0.5em;}
-.react-digital-clock .digits .d7:after{	border-width:0.5em 0 0 0.5em;border-top-color:inherit;bottom:-0.5em;}
-
-
-/* 1 */
-
-.react-digital-clock .digits div.one .d5,
-.react-digital-clock .digits div.one .d7{
-	opacity:1;
-}
-
-/* 2 */
-
-.react-digital-clock .digits div.two .d1,
-.react-digital-clock .digits div.two .d5,
-.react-digital-clock .digits div.two .d2,
-.react-digital-clock .digits div.two .d6,
-.react-digital-clock .digits div.two .d3{
-	opacity:1;
-}
-
-/* 3 */
-
-.react-digital-clock .digits div.three .d1,
-.react-digital-clock .digits div.three .d5,
-.react-digital-clock .digits div.three .d2,
-.react-digital-clock .digits div.three .d7,
-.react-digital-clock .digits div.three .d3{
-	opacity:1;
-}
-
-/* 4 */
-
-.react-digital-clock .digits div.four .d5,
-.react-digital-clock .digits div.four .d2,
-.react-digital-clock .digits div.four .d4,
-.react-digital-clock .digits div.four .d7{
-	opacity:1;
-}
-
-/* 5 */
-
-.react-digital-clock .digits div.five .d1,
-.react-digital-clock .digits div.five .d2,
-.react-digital-clock .digits div.five .d4,
-.react-digital-clock .digits div.five .d3,
-.react-digital-clock .digits div.five .d7{
-	opacity:1;
-}
-
-/* 6 */
-
-.react-digital-clock .digits div.six .d1,
-.react-digital-clock .digits div.six .d2,
-.react-digital-clock .digits div.six .d4,
-.react-digital-clock .digits div.six .d3,
-.react-digital-clock .digits div.six .d6,
-.react-digital-clock .digits div.six .d7{
-	opacity:1;
-}
-
-
-/* 7 */
-
-.react-digital-clock .digits div.seven .d1,
-.react-digital-clock .digits div.seven .d5,
-.react-digital-clock .digits div.seven .d7{
-	opacity:1;
-}
-
-/* 8 */
-
-.react-digital-clock .digits div.eight .d1,
-.react-digital-clock .digits div.eight .d2,
-.react-digital-clock .digits div.eight .d3,
-.react-digital-clock .digits div.eight .d4,
-.react-digital-clock .digits div.eight .d5,
-.react-digital-clock .digits div.eight .d6,
-.react-digital-clock .digits div.eight .d7{
-	opacity:1;
-}
-
-/* 9 */
-
-.react-digital-clock .digits div.nine .d1,
-.react-digital-clock .digits div.nine .d2,
-.react-digital-clock .digits div.nine .d3,
-.react-digital-clock .digits div.nine .d4,
-.react-digital-clock .digits div.nine .d5,
-.react-digital-clock .digits div.nine .d7{
-	opacity:1;
-}
-
-/* 0 */
-
-.react-digital-clock .digits div.zero .d1,
-.react-digital-clock .digits div.zero .d3,
-.react-digital-clock .digits div.zero .d4,
-.react-digital-clock .digits div.zero .d5,
-.react-digital-clock .digits div.zero .d6,
-.react-digital-clock .digits div.zero .d7{
-	opacity:1;
-}
-
-
-/* The dots */
-
-.react-digital-clock .digits div.dots{
-	width:0.5em;
-}
-
-.react-digital-clock .digits div.dots:before,
-.react-digital-clock .digits div.dots:after{
-	width:0.5em;
-	height:0.5em;
-	content:'';
-	position:absolute;
-	left:0;
-	top:1.4em;
-}
-
-.react-digital-clock .digits div.dots:after{
-	top:3.4em;
-}
-
-
-/*-------------------------
-	The Alarm
---------------------------*/
-
-
-.react-digital-clock .alarm{
-	width:1.6em;
-	height:1.6em;
-	bottom:20px;
-	background:url('./assets/alarm_light.jpg');
-	position:absolute;
-	opacity:0.2;
-}
-
-.react-digital-clock .alarm.active{
-	opacity:1;
-}
-
-
-/*-------------------------
-	Weekdays
---------------------------*/
-
-
-.react-digital-clock .weekdays{
-	font-size:1.2em;
-	position:absolute;
-	width:100%;
-	top:1em;
-	left:0;
-	text-align:center;
-}
-
-
-.react-digital-clock .weekdays span{
-	opacity:0.2;
-	padding:0 1em;
-}
-
-.react-digital-clock .weekdays span.active{
-	opacity:1;
-}
-
-
-/*-------------------------
-		AM/PM
---------------------------*/
-
-
-.react-digital-clock .ampm{
-	position:absolute;
-	bottom:2em;
-	right:2em;
-	font-size:1.2em;
+  width: 30em;
+  padding: 4em;
+  position: relative;
+
+
+  >.body{
+    text-align: center;
+  }
+
+  .react-digital{
+    font-size: $digital-font-size;
+    &-numeric{
+      margin-top: 5px;
+      display: inline-block;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 40em;
+    height: 2em;
+    border-radius: 100%;
+    left: 50%;
+    margin-left: -20em;
+    bottom: 2px;
+    z-index: -1;
+  }
+  .display {
+    box-sizing: content-box;
+    text-align: center;
+    padding: 4em 2em 2em;
+    border-radius: 0.6em;
+    position: relative;
+    height: 5.4em;
+  }
+  &.light {
+    background-color: #f3f3f3;
+    color: #272e38;
+    &:after {
+      box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.15);
+    }
+    .alarm {
+      background: url('./assets/alarm_light.jpg');
+    }
+    .display {
+      background-color: #dddddd;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset, 0 1px 1px #fafafa;
+    }
+  }
+  &.dark {
+    background-color: #272e38;
+    color: #cacaca;
+    &:after {
+      box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.3);
+    }
+    .digits div span {
+      background-color: #cacaca;
+      border-color: #cacaca;
+    }
+    .alarm {
+      background: url('./assets/alarm_dark.jpg');
+    }
+    .display {
+      background-color: #0f1620;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08) inset, 0 1px 1px #2d3642;
+    }
+  }
+  .alarm {
+    width: 1.6em;
+    height: 1.6em;
+    bottom: 20px;
+    background: url('./assets/alarm_light.jpg');
+    position: absolute;
+    opacity: 0.2;
+    &.active {
+      opacity: 1;
+    }
+  }
+  .weekdays {
+    font-size: 1em;
+    position: absolute;
+    width: 100%;
+    top: 1em;
+    left: 0;
+    text-align: center;
+    span {
+      opacity: 0.2;
+      padding: 0 1em;
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+  .ampm {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+    font-size: 1.2em;
+  }
 }

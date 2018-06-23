@@ -21,7 +21,7 @@ class App extends React.Component{
   render(){
     return (
       <div className="hello-react-digital-clock">
-        <ReactDigitalClock ref='rc' />
+        <ReactDigitalClock value="2018-06-23 11:03:11" ref='rc' />
       </div>
     );
   }

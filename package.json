@@ -88,9 +88,10 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "mixin-decorator": "github:afeiship/mixin-decorator",
-    "next-dom-event": "github:afeiship/next-dom-event",
+    "next-date": "github:afeiship/next-date",
     "noop": "github:afeiship/noop",
     "object-assign": "^4.1.1",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.5.10",
+    "react-digital-numeric": "github:afeiship/react-digital-numeric"
   }
 }
