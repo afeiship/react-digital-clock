@@ -1,5 +1,5 @@
 $react-digital-clock-options:(
-
+  base-size: 10px
 )!default;
 
 
@@ -9,21 +9,22 @@ $react-digital-clock-options:(
 
 
 .react-digital-clock{
+  $base-size: map-get($map: $react-digital-clock-options, $key: base-size);
+  font-size: $base-size;
   box-sizing: content-box;
-	width:370px;
-	padding:40px;
-	margin:200px auto 60px;
+	width:37em;
+	padding:4em;
 	position:relative;
 }
 
 .react-digital-clock:after{
 	content:'';
 	position:absolute;
-	width:400px;
-	height:20px;
+	width:40em;
+	height:2em;
 	border-radius:100%;
 	left:50%;
-	margin-left:-200px;
+	margin-left:-20em;
 	bottom:2px;
 	z-index:-1;
 }
@@ -32,10 +33,10 @@ $react-digital-clock-options:(
 .react-digital-clock .display{
   box-sizing: content-box;
 	text-align:center;
-	padding: 40px 20px 20px;
-	border-radius:6px;
+	padding: 4em 2em 2em;
+	border-radius:0.6em;
 	position:relative;
-	height: 54px;
+	height: 5.4em;
 }
 
 
@@ -50,7 +51,7 @@ $react-digital-clock-options:(
 }
 
 .react-digital-clock.light:after{
-	box-shadow:0 4px 10px rgba(0,0,0,0.15);
+	box-shadow:0 0.4em 1em rgba(0,0,0,0.15);
 }
 
 .react-digital-clock.light .digits div span{
@@ -64,7 +65,7 @@ $react-digital-clock-options:(
 }
 
 .react-digital-clock.light .alarm{
-	// background:url('./alarm_light.jpg');
+	background:url('./assets/alarm_light.jpg');
 }
 
 .react-digital-clock.light .display{
@@ -84,7 +85,7 @@ $react-digital-clock-options:(
 }
 
 .react-digital-clock.dark:after{
-	box-shadow:0 4px 10px rgba(0,0,0,0.3);
+	box-shadow:0 0.4em 1em rgba(0,0,0,0.3);
 }
 
 .react-digital-clock.dark .digits div span{
@@ -93,7 +94,7 @@ $react-digital-clock-options:(
 }
 
 .react-digital-clock.dark .alarm{
-	// background:url('./alarm_dark.jpg');
+	background:url('./assets/alarm_dark.jpg');
 }
 
 .react-digital-clock.dark .display{
@@ -115,10 +116,10 @@ $react-digital-clock-options:(
 .react-digital-clock .digits div{
 	text-align:left;
 	position:relative;
-	width: 28px;
-	height:50px;
+	width: 2.8em;
+	height:5.0em;
 	display:inline-block;
-	margin:0 4px;
+	margin:0 0.4em;
 }
 
 .react-digital-clock .digits div span{
@@ -136,36 +137,36 @@ $react-digital-clock-options:(
 	position:absolute;
 	width:0;
 	height:0;
-	border:5px solid transparent;
+	border:0.5em solid transparent;
 }
 
-.react-digital-clock .digits .d1{			height:5px;width:16px;top:0;left:6px;}
-.react-digital-clock .digits .d1:before{	border-width:0 5px 5px 0;border-right-color:inherit;left:-5px;}
-.react-digital-clock .digits .d1:after{	border-width:0 0 5px 5px;border-left-color:inherit;right:-5px;}
+.react-digital-clock .digits .d1{			height:0.5em;width:1.6em;top:0;left:0.6em;}
+.react-digital-clock .digits .d1:before{	border-width:0 0.5em 0.5em 0;border-right-color:inherit;left:-0.5em;}
+.react-digital-clock .digits .d1:after{	border-width:0 0 0.5em 0.5em;border-left-color:inherit;right:-0.5em;}
 
-.react-digital-clock .digits .d2{			height:5px;width:16px;top:24px;left:6px;}
-.react-digital-clock .digits .d2:before{	border-width:3px 4px 2px;border-right-color:inherit;left:-8px;}
-.react-digital-clock .digits .d2:after{	border-width:3px 4px 2px;border-left-color:inherit;right:-8px;}
+.react-digital-clock .digits .d2{			height:0.5em;width:1.6em;top:2.4em;left:0.6em;}
+.react-digital-clock .digits .d2:before{	border-width:3px .4em 2px;border-right-color:inherit;left:-8px;}
+.react-digital-clock .digits .d2:after{	border-width:3px .4em 2px;border-left-color:inherit;right:-8px;}
 
-.react-digital-clock .digits .d3{			height:5px;width:16px;top:48px;left:6px;}
-.react-digital-clock .digits .d3:before{	border-width:5px 5px 0 0;border-right-color:inherit;left:-5px;}
-.react-digital-clock .digits .d3:after{	border-width:5px 0 0 5px;border-left-color:inherit;right:-5px;}
+.react-digital-clock .digits .d3{			height:0.5em;width:1.6em;top:48px;left:0.6em;}
+.react-digital-clock .digits .d3:before{	border-width:0.5em 0.5em 0 0;border-right-color:inherit;left:-0.5em;}
+.react-digital-clock .digits .d3:after{	border-width:0.5em 0 0 0.5em;border-left-color:inherit;right:-0.5em;}
 
-.react-digital-clock .digits .d4{			width:5px;height:14px;top:7px;left:0;}
-.react-digital-clock .digits .d4:before{	border-width:0 5px 5px 0;border-bottom-color:inherit;top:-5px;}
-.react-digital-clock .digits .d4:after{	border-width:0 0 5px 5px;border-left-color:inherit;bottom:-5px;}
+.react-digital-clock .digits .d4{			width:0.5em;height:1.4em;top:.7em;left:0;}
+.react-digital-clock .digits .d4:before{	border-width:0 0.5em 0.5em 0;border-bottom-color:inherit;top:-0.5em;}
+.react-digital-clock .digits .d4:after{	border-width:0 0 0.5em 0.5em;border-left-color:inherit;bottom:-0.5em;}
 
-.react-digital-clock .digits .d5{			width:5px;height:14px;top:7px;right:0;}
-.react-digital-clock .digits .d5:before{	border-width:0 0 5px 5px;border-bottom-color:inherit;top:-5px;}
-.react-digital-clock .digits .d5:after{	border-width:5px 0 0 5px;border-top-color:inherit;bottom:-5px;}
+.react-digital-clock .digits .d5{			width:0.5em;height:1.4em;top:.7em;right:0;}
+.react-digital-clock .digits .d5:before{	border-width:0 0 0.5em 0.5em;border-bottom-color:inherit;top:-0.5em;}
+.react-digital-clock .digits .d5:after{	border-width:0.5em 0 0 0.5em;border-top-color:inherit;bottom:-0.5em;}
 
-.react-digital-clock .digits .d6{			width:5px;height:14px;top:32px;left:0;}
-.react-digital-clock .digits .d6:before{	border-width:0 5px 5px 0;border-bottom-color:inherit;top:-5px;}
-.react-digital-clock .digits .d6:after{	border-width:0 0 5px 5px;border-left-color:inherit;bottom:-5px;}
+.react-digital-clock .digits .d6{			width:0.5em;height:1.4em;top:32px;left:0;}
+.react-digital-clock .digits .d6:before{	border-width:0 0.5em 0.5em 0;border-bottom-color:inherit;top:-0.5em;}
+.react-digital-clock .digits .d6:after{	border-width:0 0 0.5em 0.5em;border-left-color:inherit;bottom:-0.5em;}
 
-.react-digital-clock .digits .d7{			width:5px;height:14px;top:32px;right:0;}
-.react-digital-clock .digits .d7:before{	border-width:0 0 5px 5px;border-bottom-color:inherit;top:-5px;}
-.react-digital-clock .digits .d7:after{	border-width:5px 0 0 5px;border-top-color:inherit;bottom:-5px;}
+.react-digital-clock .digits .d7{			width:0.5em;height:1.4em;top:32px;right:0;}
+.react-digital-clock .digits .d7:before{	border-width:0 0 0.5em 0.5em;border-bottom-color:inherit;top:-0.5em;}
+.react-digital-clock .digits .d7:after{	border-width:0.5em 0 0 0.5em;border-top-color:inherit;bottom:-0.5em;}
 
 
 /* 1 */
@@ -272,21 +273,21 @@ $react-digital-clock-options:(
 /* The dots */
 
 .react-digital-clock .digits div.dots{
-	width:5px;
+	width:0.5em;
 }
 
 .react-digital-clock .digits div.dots:before,
 .react-digital-clock .digits div.dots:after{
-	width:5px;
-	height:5px;
+	width:0.5em;
+	height:0.5em;
 	content:'';
 	position:absolute;
 	left:0;
-	top:14px;
+	top:1.4em;
 }
 
 .react-digital-clock .digits div.dots:after{
-	top:34px;
+	top:3.4em;
 }
 
 
@@ -296,10 +297,10 @@ $react-digital-clock-options:(
 
 
 .react-digital-clock .alarm{
-	width:16px;
-	height:16px;
+	width:1.6em;
+	height:1.6em;
 	bottom:20px;
-	// background:url('./alarm_light.jpg');
+	background:url('./assets/alarm_light.jpg');
 	position:absolute;
 	opacity:0.2;
 }
@@ -315,10 +316,10 @@ $react-digital-clock-options:(
 
 
 .react-digital-clock .weekdays{
-	font-size:12px;
+	font-size:1.2em;
 	position:absolute;
 	width:100%;
-	top:10px;
+	top:1em;
 	left:0;
 	text-align:center;
 }
@@ -326,7 +327,7 @@ $react-digital-clock-options:(
 
 .react-digital-clock .weekdays span{
 	opacity:0.2;
-	padding:0 10px;
+	padding:0 1em;
 }
 
 .react-digital-clock .weekdays span.active{
@@ -341,7 +342,7 @@ $react-digital-clock-options:(
 
 .react-digital-clock .ampm{
 	position:absolute;
-	bottom:20px;
-	right:20px;
-	font-size:12px;
+	bottom:2em;
+	right:2em;
+	font-size:1.2em;
 }

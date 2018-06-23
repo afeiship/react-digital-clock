@@ -1,4 +1,5 @@
 $react-digital-clock-options:(
+  base-size: 10px
 )!default;
 
 
@@ -8,7 +9,8 @@ $react-digital-clock-options:(
 
 
 .react-digital-clock{
-  font-size: 10px;
+  $base-size: map-get($map: $react-digital-clock-options, $key: base-size);
+  font-size: $base-size;
   box-sizing: content-box;
 	width:37em;
 	padding:4em;
