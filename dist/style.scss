@@ -1,39 +1,37 @@
-$react-digital-clock-options:(
+$react-digital-clock-options: (
   font-size: 10px,
   digital-font-size: 8px
-)!default;
-
-
-/*-------------------------
-	The clocks
---------------------------*/
-
-@import 'node_modules/react-digital-numeric/dist/style.scss';
+) !default;
 
 .react-digital-clock {
-  $font-size: map-get($map: $react-digital-clock-options, $key: font-size);
-  $digital-font-size: map-get($map: $react-digital-clock-options, $key: digital-font-size);
+  $font-size: map-get(
+    $map: $react-digital-clock-options,
+    $key: font-size
+  );
+  $digital-font-size: map-get(
+    $map: $react-digital-clock-options,
+    $key: digital-font-size
+  );
   font-size: $font-size;
   box-sizing: content-box;
   width: 30em;
   padding: 4em;
   position: relative;
 
-
-  >.body{
+  > .body {
     text-align: center;
   }
 
-  .react-digital{
+  .react-digital {
     font-size: $digital-font-size;
-    &-numeric{
+    &-numeric {
       margin-top: 5px;
       display: inline-block;
     }
   }
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 40em;
     height: 2em;
@@ -58,7 +56,7 @@ $react-digital-clock-options:(
       box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.15);
     }
     .alarm {
-      background: url('./assets/alarm_light.jpg');
+      background: url(https://tva1.sinaimg.cn/large/0082zybpgy1gc3utf6ad0j300g00ga9t.jpg);
     }
     .display {
       background-color: #dddddd;
@@ -76,7 +74,7 @@ $react-digital-clock-options:(
       border-color: #cacaca;
     }
     .alarm {
-      background: url('./assets/alarm_dark.jpg');
+      background: url(https://tva1.sinaimg.cn/large/0082zybpgy1gc3usqr0o0j300g00ga9t.jpg);
     }
     .display {
       background-color: #0f1620;
@@ -87,7 +85,7 @@ $react-digital-clock-options:(
     width: 1.6em;
     height: 1.6em;
     bottom: 20px;
-    background: url('./assets/alarm_light.jpg');
+    background: url("https://tva1.sinaimg.cn/large/0082zybpgy1gc3utf6ad0j300g00ga9t.jpg");
     position: absolute;
     opacity: 0.2;
     &.active {

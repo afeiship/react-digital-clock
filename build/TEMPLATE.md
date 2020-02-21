@@ -12,12 +12,7 @@ npm update @feizheng/react-digital-clock
 ```
 
 ## properties
-| Name      | Type   | Default | Description                           |
-| --------- | ------ | ------- | ------------------------------------- |
-| className | string | -       | The extended className for component. |
-| value     | string | -       | Default value.                        |
-| onChange  | func   | -       | The change handler.                   |
-
+__GENERATE_DOCS__
 
 ## usage
 1. import css
@@ -31,24 +26,7 @@ npm update @feizheng/react-digital-clock
   ```
 2. import js
   ```js
-  import ReactDigitalClock from '@feizheng/react-digital-clock';
-  import ReactDOM from 'react-dom';
-  import React from 'react';
-  import './assets/style.scss';
-
-  class App extends React.Component {
-    componentDidMount() {}
-    render() {
-      return (
-        <div className="app-container">
-          <ReactDigitalClock value="2018-06-23 11:03:11" />
-        </div>
-      );
-    }
-  }
-
-  ReactDOM.render(<App />, document.getElementById('app'));
-
+__GENERATE_DAPP__
   ```
 
 ## documentation

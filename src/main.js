@@ -1,2 +1,2 @@
-import ReactDigitalClock from 'components/react-digital-clock';
+import ReactDigitalClock from './components';
 export default ReactDigitalClock;
